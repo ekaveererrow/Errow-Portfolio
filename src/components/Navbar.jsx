@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-40 bg-[#060608] border-b border-gray-500/50">
-      <div className="max-w-5xl mt-5 mb-5 mx-auto px-6 py-3 flex justify-between items-center">
+      <div className="max-w-5xl mt-3 mb-3 mx-auto px-6 py-3 flex justify-between items-center">
         {/* Left Links */}
         <div className="flex space-x-8 text-white text-xl font-semibold">
           <a
@@ -11,21 +11,21 @@ export const Navbar = () => {
             className="relative inline-block group"
             >
             Projects
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
           <a
             href="#about"
             className="relative inline-block group"
             >
             About Me
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
           <a
             href="#contact"
             className="relative inline-block group"
             >
             Get In Touch
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
         </div>
 
