@@ -54,7 +54,7 @@ export const Projects = () => {
     );
 
   return (
-    <section id="projects" className="min-h-screen py-20 bg-[#0a0a0a] text-white">
+    <section id="projects" className="min-h-screen py-20 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
 
