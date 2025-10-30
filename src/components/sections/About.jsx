@@ -31,11 +31,28 @@ export const About = () => {
 
   const experiences = [
     {
-      title: "Project Manager & Full-Stack Developer - Academic Project ( Smart Ride )",
+      title:
+        "Project Manager & Full-Stack Developer - Academic Project (Smart Ride)",
       company: "National University",
       date: "2024 - Present",
       description:
         "Led the development of Smart Ride, a scheduling, mapping, and maintenance system designed to streamline bus operations. Managed project timelines, assigned tasks, and coordinated with team members to ensure on-time delivery. Developed both frontend and backend modules using the MERN stack, integrated RESTful APIs, and implemented role-based access control and analytics features to enhance system efficiency and usability.",
+    },
+  ];
+
+  // 🏅 Certifications
+  const certifications = [
+    {
+      title: "Fortinet Certified Fundamentals Cybersecurity",
+      issuer: "Fortinet",
+      year: "2025",
+      file: "https://www.credly.com/badges/7554a19d-0647-4989-8b54-73a2ecb4f570/public_url",
+    },
+    {
+      title: "Unity Junior Programmer",
+      issuer: "Unity",
+      year: "2024",
+      file: "/assets/unity_certification.pdf",
     },
   ];
 
@@ -65,11 +82,17 @@ export const About = () => {
           className="rounded-xl p-8 border border-white/10 hover:-translate-y-1 transition-all bg-white/5 backdrop-blur-sm"
         >
           <p className="mb-6 leading-relaxed">
-            Hello! I’m <span className="text-blue-400 font-semibold">Ekaveer Errow D. Mirandilla</span>,
-            an aspiring <span className="text-blue-400">Full-Stack Developer</span> passionate about
-            designing efficient, scalable, and user-friendly applications. I
-            specialize in building web systems with modern technologies such as
-            the MERN stack and PHP-MySQL. <br /><br />
+            Hello! I’m{" "}
+            <span className="text-blue-400 font-semibold">
+              Ekaveer Errow D. Mirandilla
+            </span>
+            , an aspiring{" "}
+            <span className="text-blue-400">Full-Stack Developer</span>{" "}
+            passionate about designing efficient, scalable, and user-friendly
+            applications. I specialize in building web systems with modern
+            technologies such as the MERN stack and PHP-MySQL.
+            <br />
+            <br />
             My goal is to keep expanding my expertise in full-stack
             development, contribute to meaningful projects, and work with
             collaborative teams that value innovation and growth.
@@ -139,10 +162,14 @@ export const About = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <strong>B.S. in Information Technology (Mobile and Web Application)</strong> – National University (2023 - Present)
+                <strong>
+                  B.S. in Information Technology (Mobile and Web Application)
+                </strong>{" "}
+                – National University (2023 - Present)
               </li>
               <li>
-                <strong>B.S. in Information Technology</strong> – Central Colleges of the Philippines (2022 - 2023)
+                <strong>B.S. in Information Technology</strong> – Central
+                Colleges of the Philippines (2022 - 2023)
               </li>
             </ul>
           </div>
@@ -152,7 +179,7 @@ export const About = () => {
             <h3 className="text-2xl font-bold mb-6 text-blue-400">
               💼 Experience
             </h3>
-            <div className="relative border-l border-blue-500/30 pl-6 space-y-8 ">
+            <div className="relative border-l border-blue-500/30 pl-6 space-y-8">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={index}
@@ -170,6 +197,49 @@ export const About = () => {
                   <p className="mt-2 text-sm leading-relaxed">
                     {exp.description}
                   </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold mb-6 text-blue-400">🏅 Certifications</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="border border-white/10 rounded-xl p-6 bg-white/5 backdrop-blur-sm hover:-translate-y-1 transition-all"
+                >
+                  <h4 className="text-lg font-semibold text-blue-400">{cert.title}</h4>
+                  <p className="text-sm text-gray-300 mb-3">
+                    {cert.issuer} • {cert.year}
+                  </p>
+
+                  {cert.file.endsWith(".pdf") ? (
+                    // Direct PDF download
+                    <a
+                      href={cert.file}
+                      download={cert.title + ".pdf"}
+                      className="inline-block mt-2 px-4 py-2 text-sm font-semibold rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition-all"
+                    >
+                      Download Certificate
+                    </a>
+                  ) : (
+                    // External certificate link (like Credly)
+                    <a
+                      href={cert.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-2 px-4 py-2 text-sm font-semibold rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition-all"
+                    >
+                      View Certificate
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>
