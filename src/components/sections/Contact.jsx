@@ -36,9 +36,9 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-20   text-white"
+      className="min-h-screen flex flex-col justify-center py-20 text-white bg-[#0a0a0a]"
     >
-      <div className="w-full max-w-3xl px-6">
+      <div className="w-full max-w-3xl px-6 mx-auto flex-1">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -145,6 +145,16 @@ export const Contact = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Footer */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        className="mt-16 text-center text-gray-500 text-sm border-t border-white/10 pt-6"
+      >
+        © {new Date().getFullYear()} Ekaveer Errow Mirandilla. All rights reserved.
+      </motion.footer>
     </section>
   );
 };
