@@ -6,13 +6,14 @@ import smartrideLogin from "../../assets/smartrideweb/smartrideLogin.png";
 import smartrideDashboard from "../../assets/smartrideweb/smartrideDashboard.png";
 import smartrideSchedule from "../../assets/smartrideweb/smartrideSchedule.png";
 import smartrideAnalytics from "../../assets/smartrideweb/smartrideAnalytics.png";
+import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.jpg";
 
 export const Projects = () => {
   const projects = [
     {
       title: "Smart Ride",
       description:
-        "Smart Ride revolutionizes bus company operations by integrating scheduling, mapping, and maintenance into one system. Built using the MERN stack (MongoDB, Express, React, Node.js), it enhances efficiency, minimizes downtime, and enables real-time decision-making through analytics.",
+        "Smart Ride revolutionizes bus company operations by integrating scheduling, mapping, and maintenance into one system. Built using the MERN stack (MongoDB, Express, React, Node.js), it enhances efficiency, minimizes downtime, and enables real-time decision-making through analytics. For Philippine Rabbit Bus Lines.",
       tech: ["React", "Node.js", "Express", "MongoDB", "Vercel", "Render"],
       images: [
         smartrideLogin,
@@ -22,10 +23,12 @@ export const Projects = () => {
       ],
     },
     {
-      title: "Project Two",
-      description: "",
-      tech: ["React"],
-      images: [],
+      title: "Build Stock",
+      description: "System for Hardware Companies procurement. Developed as part of our Information Security course, it integrates authentication, access control, and data protection to safeguard sensitive business operations.",
+      tech: ["PHP", "MySQL", "CSS", "JavaScript"],
+      images: [
+        buildstockDashboard,
+      ],
     },
     {
       title: "Project Three",
