@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import profilePic from "../../assets/photoErrow.png";
+import resumePDF from "../../assets/errowresume.pdf";
 
 export const Home = () => {
   return (
@@ -7,6 +8,7 @@ export const Home = () => {
       id="home"
       className="min-h-screen flex flex-col items-center justify-center text-center px-4"
     >
+      {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,6 +18,7 @@ export const Home = () => {
         Ekaveer Errow Mirandilla
       </motion.h1>
 
+      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,21 +28,17 @@ export const Home = () => {
         Web Developer
       </motion.p>
 
-      {/* Fixed: single transition object with per-property configs */}
+      {/* Profile Picture */}
       <motion.div
         initial={{ scale: 0.7, opacity: 0, y: 0 }}
         animate={{
           scale: 1,
           opacity: 1,
-          // keyframes for floating — allowed because y has its own tween in transition below
           y: [0, -12, 0],
         }}
         transition={{
-          // spring only for scale
           scale: { type: "spring", stiffness: 120, damping: 14, delay: 0.6 },
-          // simple tween for opacity
           opacity: { duration: 0.6, delay: 0.6 },
-          // keyframe tween for y (floating), loops forever
           y: {
             duration: 4,
             ease: "easeInOut",
@@ -58,6 +57,18 @@ export const Home = () => {
           transition={{ type: "spring", stiffness: 200 }}
         />
       </motion.div>
+
+      {/* Download Resume Button */}
+      <motion.a
+        href={resumePDF}
+        download="Ekaveer_Errow_Mirandilla_Resume.pdf"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 200 }}
+        className="mt-8 inline-block px-6 py-3 rounded-lg border border-blue-500 text-white font-semibold hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+      >
+        📄 Download Resume
+      </motion.a>
     </section>
   );
 };
