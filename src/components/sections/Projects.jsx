@@ -6,10 +6,10 @@ import smartrideLogin from "../../assets/smartrideweb/smartrideLogin.png";
 import smartrideDashboard from "../../assets/smartrideweb/smartrideDashboard.png";
 import smartrideSchedule from "../../assets/smartrideweb/smartrideSchedule.png";
 import smartrideAnalytics from "../../assets/smartrideweb/smartrideAnalytics.png";
-import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.jpg";
-import buildstockUsers from "../../assets/buildstockk/buildstockUsers.jpg";
-import buildstockOrders from "../../assets/buildstockk/buildstockOrders.jpg";
-import buildstockInventory from "../../assets/buildstockk/buildstockInventory.jpg";
+import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.png";
+import buildstockUsers from "../../assets/buildstockk/buildstockUsers.png";
+import buildstockOrders from "../../assets/buildstockk/buildstockOrders.png";
+import buildstockInventory from "../../assets/buildstockk/buildstockInventory.png";
 
 export const Projects = () => {
   const projects = [
