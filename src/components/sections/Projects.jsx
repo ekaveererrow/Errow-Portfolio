@@ -10,6 +10,7 @@ import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.pn
 import buildstockUsers from "../../assets/buildstockk/buildstockUsers.png";
 import buildstockOrders from "../../assets/buildstockk/buildstockOrders.png";
 import buildstockInventory from "../../assets/buildstockk/buildstockInventory.png";
+import buildstockSupplier from "../../assets/buildstockk/buildstockSupplier.png";
 
 export const Projects = () => {
   const projects = [
