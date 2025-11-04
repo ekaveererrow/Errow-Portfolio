@@ -7,6 +7,9 @@ import smartrideDashboard from "../../assets/smartrideweb/smartrideDashboard.png
 import smartrideSchedule from "../../assets/smartrideweb/smartrideSchedule.png";
 import smartrideAnalytics from "../../assets/smartrideweb/smartrideAnalytics.png";
 import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.jpg";
+import buildstockUsers from "../../assets/buildstockk/buildstockUsers.jpg";
+import buildstockOrders from "../../assets/buildstockk/buildstockOrders.jpg";
+import buildstockInventory from "../../assets/buildstockk/buildstockInventory.jpg";
 
 export const Projects = () => {
   const projects = [
@@ -28,6 +31,10 @@ export const Projects = () => {
       tech: ["PHP", "MySQL", "CSS", "JavaScript"],
       images: [
         buildstockDashboard,
+        buildstockUsers,
+        buildstockOrders,
+        buildstockInventory,
+        buildstockSupplier,
       ],
     },
     {
@@ -120,7 +127,7 @@ export const Projects = () => {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-3 right-3 text-white hover:text-blue-400 transition"
+                className="absolute top-3 right-3 text-black hover:text-blue-400 transition"
               >
                 <X size={28} />
               </button>
