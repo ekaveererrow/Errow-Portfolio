@@ -1,34 +1,31 @@
 import { motion } from "framer-motion";
 import profilePic from "../../assets/photoErrow.png";
-import resumePDF from "../../assets/errowresume.pdf";
+import resumePDF from "../../assets/Ekaveer Mirandilla Resume.pdf";
 
 export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4 theme-section"
     >
-      {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-3xl md:text-6xl font-bold text-white mb-2"
+        className="text-3xl md:text-6xl font-bold theme-text mb-2"
       >
-        Ekaveer Errow Mirandilla
+         Ekaveer Errow Mirandilla
       </motion.h1>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="text-lg md:text-4xl text-blue-500 mb-6 font-medium"
+        className="text-lg md:text-4xl theme-accent mb-6 font-medium"
       >
         Web Developer
       </motion.p>
 
-      {/* Profile Picture */}
       <motion.div
         initial={{ scale: 0.7, opacity: 0, y: 0 }}
         animate={{
@@ -47,7 +44,7 @@ export const Home = () => {
             delay: 0.6,
           },
         }}
-        className="w-60 h-60 md:w-60 md:h-60 rounded-full border-2 border-blue-500 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.4)]"
+        className="w-60 h-60 md:w-60 md:h-60 rounded-full border-2 border-[color:var(--accent)] flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.24)]"
       >
         <motion.img
           src={profilePic}
@@ -58,17 +55,17 @@ export const Home = () => {
         />
       </motion.div>
 
-      {/* Download Resume Button */}
       <motion.a
         href={resumePDF}
-        download="Ekaveer_Errow_Mirandilla_Resume.pdf"
+        download="Ekaveer Mirandilla Resume.pdf"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 200 }}
-        className="mt-8 inline-block px-6 py-3 rounded-lg border border-blue-500 text-white font-semibold hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+        className="mt-8 inline-block px-6 py-3 rounded-lg theme-accent-bg font-semibold hover:bg-[var(--cta)] transition-all shadow-[0_0_20px_rgba(59,130,246,0.24)]"
       >
-        📄 Download Resume
+        Download Resume
       </motion.a>
     </section>
   );
 };
+

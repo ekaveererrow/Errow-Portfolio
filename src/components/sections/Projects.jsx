@@ -6,11 +6,8 @@ import smartrideLogin from "../../assets/smartrideweb/smartrideLogin.png";
 import smartrideDashboard from "../../assets/smartrideweb/smartrideDashboard.png";
 import smartrideSchedule from "../../assets/smartrideweb/smartrideSchedule.png";
 import smartrideAnalytics from "../../assets/smartrideweb/smartrideAnalytics.png";
-import buildstockDashboard from "../../assets/buildstockk/buildstockDashboard.png";
-import buildstockUsers from "../../assets/buildstockk/buildstockUsers.png";
-import buildstockOrders from "../../assets/buildstockk/buildstockOrders.png";
-import buildstockInventory from "../../assets/buildstockk/buildstockInventory.png";
-import buildstockSupplier from "../../assets/buildstockk/buildstockSupplier.png";
+import cmaLogin from "../../assets/cma/CMA Login.png";
+import lambDashboard from "../../assets/lamb/LAMB Dashboard.png";
 
 export const Projects = () => {
   const projects = [
@@ -27,22 +24,18 @@ export const Projects = () => {
       ],
     },
     {
-      title: "Build Stock",
-      description: "System for Hardware Companies procurement. Developed as part of our Information Security course, it integrates authentication, access control, and data protection to safeguard sensitive business operations.",
-      tech: ["PHP", "MySQL", "CSS", "JavaScript"],
-      images: [
-        buildstockDashboard,
-        buildstockUsers,
-        buildstockOrders,
-        buildstockInventory,
-        buildstockSupplier,
-      ],
+      title: "CMA",
+      description:
+        "CMA is one of my projects focused on streamlining the workflow and presenting key information in a clean, accessible interface.",
+      tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Supabase", "TypeScript"],
+      images: [cmaLogin],
     },
     {
-      title: "Project Three",
-      description: "",
-      tech: ["React"],
-      images: [],
+      title: "LAMB",
+      description:
+        "LAMB is another project I worked on, built to support structured workflows and a straightforward user experience.",
+      tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Supabase", "TypeScript"],
+      images: [lambDashboard],
     },
   ];
 
@@ -50,6 +43,7 @@ export const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const openModal = (project, index) => {
+    if (!project.images.length) return;
     setSelectedProject(project);
     setCurrentIndex(index);
   };
@@ -65,41 +59,48 @@ export const Projects = () => {
     );
 
   return (
-    <section id="projects" className="min-h-screen py-20 text-white">
+    <section id="projects" className="min-h-screen py-20 theme-section">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center theme-text">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={i}
-              className="bg-linear-to-b from-blue-500/5 to-transparent rounded-xl p-5 border border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] transition-all"
+              className="theme-card rounded-xl p-5 hover:border-[color:var(--accent)] transition-all"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <div
-                className="relative overflow-hidden rounded-xl cursor-pointer"
+                className={`relative overflow-hidden rounded-xl ${
+                  project.images.length ? "cursor-pointer" : ""
+                }`}
                 onClick={() => openModal(project, 0)}
               >
-                <motion.img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="rounded-xl object-cover w-full h-56 transition-transform duration-500 hover:scale-110"
-                  whileHover={{ scale: 1.05 }}
-                />
+                {project.images.length ? (
+                  <motion.img
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="rounded-xl object-cover w-full h-56 transition-transform duration-500 hover:scale-110"
+                    whileHover={{ scale: 1.05 }}
+                  />
+                ) : (
+                  <div className="h-56 w-full rounded-xl bg-[var(--surface-strong)] border border-[color:var(--border)] flex items-center justify-center">
+                    <span className="text-3xl font-bold tracking-[0.35em] theme-muted">
+                      {project.title}
+                    </span>
+                  </div>
+                )}
               </div>
 
-              <h3 className="text-xl font-bold mt-4 mb-2">{project.title}</h3>
-              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+              <h3 className="text-xl font-bold mt-4 mb-2 theme-text">{project.title}</h3>
+              <p className="theme-muted text-sm mb-4">{project.description}</p>
 
               <div className="flex flex-wrap gap-4">
                 {project.tech.map((tech, t) => (
-                  <span
-                    key={t}
-                    className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-xs"
-                  >
+                  <span key={t} className="theme-chip py-1 px-3 rounded-full text-xs">
                     {tech}
                   </span>
                 ))}
@@ -109,31 +110,28 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* --- Image Modal Popup --- */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 theme-overlay flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="relative max-w-4xl w-full bg-[#0a0a0a] rounded-xl overflow-hidden"
+              className="relative max-w-4xl w-full theme-modal rounded-xl overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 150 }}
             >
-              {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-3 right-3 text-black hover:text-blue-400 transition"
+                className="absolute top-3 right-3 theme-text hover:text-[var(--accent)] transition z-10"
               >
                 <X size={28} />
               </button>
 
-              {/* Image */}
               <motion.img
                 src={selectedProject.images[currentIndex]}
                 alt="Project Preview"
@@ -145,16 +143,15 @@ export const Projects = () => {
                 transition={{ duration: 0.4 }}
               />
 
-              {/* Navigation */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full hover:bg-blue-500/30 transition"
+                className="absolute left-4 top-1/2 -translate-y-1/2 theme-card p-2 rounded-full hover:border-[color:var(--accent)] transition"
               >
                 <ChevronLeft size={24} />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full hover:bg-blue-500/30 transition"
+                className="absolute right-4 top-1/2 -translate-y-1/2 theme-card p-2 rounded-full hover:border-[color:var(--accent)] transition"
               >
                 <ChevronRight size={24} />
               </button>
